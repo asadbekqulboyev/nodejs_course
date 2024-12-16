@@ -1,1 +1,5 @@
-Node jsni organyapman
+Node,
+jsni,
+organyapman,
+keyingi,
+text
