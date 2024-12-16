@@ -1,6 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const os = require('os')
+const Events = require('events')
+// const fs = require('fs');
+// const path = require('path');
+// const os = require('os')
 // fs.mkdir(path.join(__dirname, 'notes','december.txt'), (err) => {
 //     if (err) throw new Error()
 //     console.log('Error')
@@ -31,4 +32,15 @@ const os = require('os')
 // console.log(os.freemem()); - bo'sh joy
 // console.log(os.totalmem()/(1024 * 1024).toFixed(2));
 // console.log(os.freemem()/(1024 * 1024).toFixed(2));
-console.log(os.homedir());
+// console.log(os.homedir());
+// console.log(Events.on);
+class Logger extends Events{
+    log(a,b){
+        this.emit('calculate', a+b)
+    }
+}
+const logger = new Logger()
+logger.on('calculate',dats=>{
+    console.log(dats);
+})
+logger.log(5,5)
