@@ -35,12 +35,13 @@ const Events = require('events')
 // console.log(os.homedir());
 // console.log(Events.on);
 class Logger extends Events{
-    log(a,b){
-        this.emit('calculate', a+b)
-    }
+ log(a,b){
+    this.emit('calculate',a+b)
+ } 
 }
-const logger = new Logger()
+const logger = new Logger();
+
 logger.on('calculate',dats=>{
     console.log(dats);
 })
-logger.log(5,5)
+logger.log(1,99)
