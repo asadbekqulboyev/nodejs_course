@@ -1,4 +1,4 @@
-// let fs = require('./modules/fs');
-// let server = require('./modules/serverfs')
+
+let server = require('./modules/server')
 // console.log(fs);
-// console.log(server);
+console.log(server);
