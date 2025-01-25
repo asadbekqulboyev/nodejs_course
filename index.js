@@ -23,18 +23,16 @@ const server = http.createServer((req, res) => {
                 if(err) throw err
                 res.end(conten)
             })
+        }else if(req.url=='/api/admin'){
+            // res.writeHead(200,{'Content-Type':'text/plain'})
+            const admin = { 'admin': 'Asadbek', 'surname': 'Familya', 'status': '1' }
+            res.end(JSON.stringify(admin))
         }
     } else if (req.method === 'POST') {
         const body = [];
         res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'})
         req.on('data', dates => {
             body.push(Buffer.from(dates))
-        // body.push(chunk)})
-        // req.on('end', () => {
-        // const parsedBody = Buffer.concat(body).toString();
-        // const message = decodeURIComponent(parsedBody.split('=')[1]); 
-        // res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-        // res.end(`Name successfully added: ${message}`)});
         })
         req.on('end' , ()=>{
             const message = body.toString().split('=')[1]
@@ -44,5 +42,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(3000, () => {
-    console.log('Server has started on port 3000');
+    // console.log('Server has started on port 3000');
 });
