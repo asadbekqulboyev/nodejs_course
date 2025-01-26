@@ -25,7 +25,7 @@ const server = http.createServer((req, res) => {
             })
         }else if(req.url=='/api/admin'){
             // res.writeHead(200,{'Content-Type':'text/plain'})
-            const admin = { 'admin': 'Asadbek', 'surname': 'Familya', 'status': '1' }
+            const admin = { admin: 'Asadbek', 'surname': 'Familya', 'status': '1' }
             res.end(JSON.stringify(admin))
         }
     } else if (req.method === 'POST') {
